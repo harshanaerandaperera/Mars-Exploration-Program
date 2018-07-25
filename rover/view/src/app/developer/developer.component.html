@@ -1,0 +1,298 @@
+<!--Developer Dashboard Starts Here-->
+<div *ngIf="!checkBtnStatusToManageCamera() && !checkBtnStatusToManageInstruments() && !checkBtnStatusToManageSensors() && !checkBtnStatusToManageOperatingSystems() && !checkBtnStatusManageObjectives()" class="features-boxed">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a [routerLink]="['/']" >Home</a></li>
+      <li><a >Dashboard</a></li>
+    </ol>
+    <div class="intro">
+      <h2 class="text-center">WELCOME DEVELOPER</h2>
+      <hr>
+      <p class="text-center">Please select an option to proceed </p>
+    </div>
+    <div class="row features">
+      <div class="col-md-4 col-sm-6 item">
+        <div class="box">
+          <a (click)="changeBtnStatusToManageCamera()" > <i class="glyphicon glyphicon-camera icon"></i>
+            <h3 class="name">Manage Cameras</h3></a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 item">
+        <div class="box">
+          <a (click)="changeBtnStatusToManageInstruments()"> <i class="glyphicon glyphicon-cog icon"></i>
+            <h3 class="name">Manage Instruments</h3></a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 item">
+        <div class="box">
+          <a (click)="changeBtnStatusToManageSensors()"> <i class="glyphicon glyphicon glyphicon-signal icon"></i>
+            <h3 class="name">Manage Sensors</h3></a>
+        </div>
+      </div>
+      <div class="col-md-4 col-md-offset-4 col-sm-6 item">
+        <div class="box">
+          <a (click)="changeBtnStatusToManageOperatingSystems()"> <i class="glyphicon  glyphicon-blackboard icon"></i>
+            <h3 class="name">Manage Operating Systems</h3></a>
+        </div>
+      </div>
+      <div class="col-md-4 col-md-offset-4 col-sm-6 item">
+        <div class="box">
+          <a (click)="changeBtnStatusToManageObjectives()"> <i class="glyphicon  glyphicon-menu-hamburger icon"></i>
+            <h3 class="name">Manage Objectives</h3></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Developer Dashboard Ends Here-->
+
+<!--Manage Camera Form Starts Here-->
+<div *ngIf="checkBtnStatusToManageCamera()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="addDeveloperCameras()">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDeveloperDashboard()"><span>Dashboard </span></a></li>
+          <li><a ><span>Manage Cameras </span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Manage Cameras</strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Enter The Below Details To Add A New Camera</strong></legend>
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Camera Type </label>
+                    <input class="form-control" type="text" required="" placeholder="Enter Camera Type" name="DevCameraType" [(ngModel)]="DevCameraType">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Camera Details</label>
+                    <input class="form-control" type="text" placeholder="Enter Camera Details" name="DevCameraDetails" [(ngModel)]="DevCameraDetails">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-offset-8">
+                      <button class="btn btn-group-xs" type="submit">Done </button>
+                    </div>
+                    <div class="col-md-offset-1">
+                      <button class="btn btn-xs" type="button" (click)="changeBtnStatusToDeveloperDashboard()" >ok </button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Manage Camera Form Ends Here-->
+
+<!--Manage Instruments Form Starts Here-->
+<div *ngIf="checkBtnStatusToManageInstruments()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="addDeveloperInstruments()">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDeveloperDashboard()"><span>Dashboard </span></a></li>
+          <li><a ><span>Manage Instruments </span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Manage Instruments</strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Enter The Below Details To Add A New Instrument</strong></legend>
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Instrument Type </label>
+                    <input class="form-control" type="text" required="" placeholder="Enter Instrument Type" name="DevInstrumentType" [(ngModel)]="DevInstrumentType">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Instrument Details</label>
+                    <input class="form-control" type="text" placeholder="Enter Instrument Details" name="DevInstrumentDetails" [(ngModel)]="DevInstrumentDetails">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-offset-8">
+                      <button class="btn btn-group-xs" type="submit">Done </button>
+                    </div>
+                    <div class="col-md-offset-1">
+                      <button class="btn btn-xs" type="button" (click)="changeBtnStatusToDeveloperDashboard()" >ok </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Manage Instruments Form Ends Here-->
+
+<!--Manage Sensors Form Starts Here-->
+<div *ngIf="checkBtnStatusToManageSensors()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="addDeveloperSensors()" >
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDeveloperDashboard()"><span>Dashboard </span></a></li>
+          <li><a ><span>Manage Sensors </span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Manage Sensors</strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Enter The Below Details To Add A New Sensor</strong></legend>
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Sensor Type </label>
+                    <input class="form-control" type="text" required="" placeholder="Enter Sensor Type" name="DevSensorType" [(ngModel)]="DevSensorType">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Sensor Details</label>
+                    <input class="form-control" type="text" placeholder="Enter Sensor Details" name="DevSensorDetails" [(ngModel)]="DevSensorDetails">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-offset-8">
+                      <button class="btn btn-group-xs" type="submit">Done </button>
+                    </div>
+                    <div class="col-md-offset-1">
+                      <button class="btn btn-xs" type="button" (click)="changeBtnStatusToDeveloperDashboard()" >ok </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>      <!--//TODO Sensors Count Field Need To Add  -->
+  </form>
+</div>
+<!--Manage Sensors Form Ends Here-->
+
+<!--Manage Operating Systems Form Starts Here-->
+<div *ngIf="checkBtnStatusToManageOperatingSystems()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="addDevelOperoperatingSystems()">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDeveloperDashboard()"><span>Dashboard </span></a></li>
+          <li><a ><span>Manage Operating Systems </span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Manage Operating Systems</strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Enter The Below Details To Add A New Operating System</strong></legend>
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Operating Systems Type </label>
+                    <input class="form-control" type="text" required="" placeholder="Enter Operating Systems Type" name="DevOperatingSystem" [(ngModel)]="DevOperatingSystem">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-offset-8">
+                      <button class="btn btn-group-xs" type="submit">Done </button>
+                    </div>
+                    <div class="col-md-offset-1">
+                      <button class="btn btn-xs" type="button" (click)="changeBtnStatusToDeveloperDashboard()" >ok </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Manage Operating Systems Form Ends Here-->
+
+<!--Manage Objectives Form Starts Here-->
+<div *ngIf="checkBtnStatusManageObjectives()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="addDeveloperoperObjectivesTypes()">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDeveloperDashboard()"><span>Dashboard </span></a></li>
+          <li><a ><span>Manage Objectives  </span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Manage Objectives </strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Enter The Below Details To Add A New Objectives </strong></legend>
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Objectives  Type </label>
+                    <input class="form-control" type="text" required="" placeholder="Enter Objectives  Type" name="DevObjectiveType" [(ngModel)]="DevObjectiveType">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Objectives  Details </label>
+                    <input class="form-control" type="text" required="" placeholder="Enter Objectives  Details" name="DevObjestiveDetails" [(ngModel)]="DevObjestiveDetails">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-offset-8">
+                      <button class="btn btn-group-xs" type="submit">Done </button>
+                    </div>
+                    <div class="col-md-offset-1">
+                      <button class="btn btn-xs" type="button" (click)="changeBtnStatusToDeveloperDashboard()" >ok </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Manage Operating Systems Form Ends Here-->
+
+
+

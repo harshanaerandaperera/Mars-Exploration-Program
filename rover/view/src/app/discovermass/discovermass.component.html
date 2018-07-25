@@ -1,0 +1,436 @@
+
+<!--EXPLORER(contrlrover) dashboard starts here-->
+<div *ngIf="!checkBtnStatusToDisplaDiscoverMras()&&!checkBtnStatusToSelectWayPoints()&&!checkBtnStatusToDisplayTravarlPath() && !checkBtnStatusToAcquireElement()&&!checkBtnStatusToSendReport() && !checkBtnStatusToGenerateReport() "  class="features-boxed">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a [routerLink]="['/']" >Home</a></li>
+      <li><a >Dashboard</a></li>
+    </ol>
+    <div class="intro">
+      <h2 class="text-center">WELCOME EXPLORER</h2>
+      <hr>
+      <p class="text-center">Please select an option to proceed </p>
+    </div>
+    <div class="row features">
+      <div class="col-md-4 col-sm-6 item">
+        <div class="box">
+          <a [routerLink]="['/controlrover']" > <i class="glyphicon glyphicon-flag icon"></i>
+            <h3 class="name">Set Objectives and Tasks</h3></a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 item">
+        <div class="box">
+          <a (click)="changeBtnStatusToDisplayDiscoverMras()" > <i class="glyphicon glyphicon-globe icon"></i>
+            <h3 class="name">Discover Mars</h3></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--EXPLORER(contrlrover) dashboard ends here-->
+
+<!--display rovers with objectives and missions starts here-->
+<div *ngIf="checkBtnStatusToDisplaDiscoverMras()" class="container container-fluid" style="background-color:#ffffff;">
+  <form class="form-inline">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDiscoverMarsDashboard()"><span>Dashboard </span></a></li>
+          <li><a><span>Select a Rover</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-10 col-md-offset-1" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Select a Rover</strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Below is the list of Rovers With Objectives Added</strong></legend>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <caption>Your Rovers</caption>
+                <thead>
+                <tr>
+                  <th>RID</th>
+                  <th width="30%">Name </th>
+                  <th ></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let objrov of roverArray">
+                  <td>{{objrov.RoverID}}</td>
+                  <td>{{objrov.RoverName}} </td>
+                  <td>
+                    <button class="btn btn-primary" type="button" (click)="changeBtnStatusToSelectWayPoints(objrov.RoverID,objrov.RoverName)">Start Discover Mars ?</button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--display rovers with objectives and missions ends here-->
+
+<!--Select Way Points Starts Here-->
+<div *ngIf="checkBtnStatusToSelectWayPoints() " class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="displayTraversalPath()" class="form-horizontal">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDiscoverMarsDashboard()"><span>Dashboard </span></a></li>
+          <li><a (click)="changeBtnStatusToDisplayDiscoverMras()"><span>Select a Rover</span></a></li>
+          <li><a><span>Select Way Points </span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-10 col-md-offset-1" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong><b style="color: yellow">{{currenttraversalrovername}} Rover :{{currenttraversalroverid}}</b>   Discover Mars </strong></h1></div>
+
+        <div class="panel-body">
+            <fieldset>
+              <legend style="font-size:18px;"><strong>Select Way Points To Explore</strong></legend>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+
+                        <div class="col-sm-10">
+                          <label class="control-label"><b>Your Current Position :</b> {{selectedrovercurrentposition}} </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <div class="col-sm-4">
+                          <label class="control-label">Way Point </label>
+                        </div>
+                        <div class="col-sm-8">
+                          <select class="form-control" required=""  name="selectedWayPoint" [(ngModel)]="selectedWayPoint">
+
+                            <option *ngIf="!removeWayPointGaleCrator()">Gale Crator</option>
+                            <option *ngIf="!removeWayPointMountanSharp()">Mountan Sharp</option>
+                            <option *ngIf="!removeWayPointVallesMarineris()">Valles Marineris</option>
+                            <option *ngIf="!removeWayPointHellasPlanitia()">Hellas Planitia</option>
+                            <option *ngIf="!removeWayPointMartianIcecaps()">Martian Icecaps</option>
+                          </select>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="form-group">
+                    <div class="col-md-4">
+                      <button class="btn btn-warning" type="button" (click)="addWayPointToAnArray()">Add</button>
+                    </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <div class="col-md-6">
+                          <button class="btn btn-primary" type="submit" >Start Discover</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Select Way Points Ends Here-->
+
+<!--Display Traversal Path Starts Here-->
+<div *ngIf="checkBtnStatusToDisplayTravarlPath()" class="container container-fluid" style="background-color:#ffffff;">
+  <form class="form-inline">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDiscoverMarsDashboard()"><span>Dashboard </span></a></li>
+          <li><a><span>Select a Rover</span></a></li>
+          <li><a ><span>Select Way Points </span></a></li>
+          <li><a><span>Traversal Path</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-8 col-md-offset-2" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong><b style="color: yellow">{{currenttraversalrovername}} Rover :{{currenttraversalroverid}}</b> Your Traversal Path</strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Below is Your Traversal Path</strong></legend>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <caption>Traversal Paths</caption>
+                <thead>
+                <tr>
+                  <th>Way Point 1</th>
+                  <th>Way Point 2 </th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let path of paths">
+                  <td>{{path.point1}}</td>
+                  <td>{{path.point2}}</td>
+                  <td *ngIf="!validateLastButton(path.point1)">
+                    <button class="btn btn-primary" type="button" (click)="changeBtnStatusToAcquireElement(path.point1,path.point2)">Found An Element ?</button>
+                  </td>
+                </tr>
+                <tr></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-success" type="button" (click)="updateRoverMap()">Finish And Send To DSN</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Display Traversal Path Ends Here-->
+
+<!--Acquire Elements Form Starts Here-->
+<div *ngIf="checkBtnStatusToAcquireElement()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="displayTraversalPath()">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDiscoverMarsDashboard()"><span>Dashboard </span></a></li>
+          <li><a><span>Select a Rover</span></a></li>
+          <li><a ><span>Select Way Points </span></a></li>
+          <li><a><span>Traversal Path</span></a></li>
+          <li><a><span>Acquire Elements</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-12 col-md-offset-0" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Found An Element ?</strong> </h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Enter The Below Details To Acquire The Elememnt</strong> </legend>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="col-sm-8">
+                      <label class="control-label">Select Element Type</label>
+                      <select class="form-control" required=""  name="elementtype" [(ngModel)]="elementtype">
+                        <option value="" selected="">Please Select</option>
+                        <option>rock</option>
+                        <option>oil</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="control-label">Amount    </label>
+                      <input class="form-control" type="number" required="" placeholder="Amount" name="amount" [(ngModel)]="amount">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="control-label">Distance Between {{point1}} And {{point2}} </label>
+                      <input class="form-control" type="number" required="" placeholder="Distance" name="distance" [(ngModel)]="distance">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="col-sm-8">
+                    <div class="form-group">
+                      <label class="control-label">Way Point : A :{{point1}} </label>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label">Way Point : B : {{point2}} </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 col-md-offset-2 col-xs-6">
+                <button class="btn btn-warning" type="button" (click)="acquireElementsToAnArray()">Add</button>
+              </div>
+              <div class="col-md-3 col-md-offset-2 col-xs-6">
+                <button class="btn btn-primary" type="submit">Done </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Acquire Elements Form Ends Here-->
+
+
+
+
+
+
+<!--Report Starts Here-->
+<div *ngIf="checkBtnStatusToGenerateReport()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="generateReportt()" class="form-horizontal">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDiscoverMarsDashboard()"><span>Dashboard </span></a></li>
+          <li><a><span>Select a Rover</span></a></li>
+          <li><a ><span>Select Way Points </span></a></li>
+          <li><a><span>Traversal Path</span></a></li>
+          <li><a><span>Acquire Elements</span></a></li>
+          <li><a><span>Select Transmission Option </span></a></li>
+          <li><a><span>Report</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-10 col-md-offset-1" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Report</strong> </h1></div>
+          <div class="panel-body">
+            <fieldset>
+              <legend style="font-size:18px;"><strong>Report Generated By : {{currenttraversalrovername}} TransmissionID: {{transmissionId}} </strong></legend>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="col-sm-4">
+
+                    </div>
+                    <div class="col-sm-8">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="col-sm-4">
+
+                    </div>
+                    <div class="col-sm-8">
+                      <label class="control-label"> {{Currentdate}}</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th><b style="color: #771e86">Objectives :</b></th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let obj of objectives" >
+                  <td>{{obj.OBJECTIVETYPE}}</td>
+
+                </tr>
+
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+              </table>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th><b style="color: #771e86">Tasks :</b></th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let tak of tasks" >
+                  <td>{{tak.TASKDETAILS}}</td>
+
+                </tr>
+
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+              </table>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th><b style="color: #771e86">Traversal Path : Way Point A</b></th>
+                  <th><b style="color: #771e86">Traversal Path : Way Point B</b></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let pth of paths" >
+                  <td>{{pth.point1}}</td>
+                  <td>{{pth.point2}}</td>
+
+                </tr>
+
+
+
+                </tbody>
+                <tfoot>
+                <h6><b style="color: #771e86">Total Traversal distance :</b>{{selectedrovertraversaldistance}}</h6>
+                </tfoot>
+              </table>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th><b style="color: #771e86">Found Elements : Element Type</b></th>
+                  <th><b style="color: #771e86">Found Elements : Element Amount</b></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let elm of elementArray" >
+                  <td>{{elm.elementtype}}</td>
+                  <td>{{elm.amount}}</td>
+
+                </tr>
+
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+              </table>
+            </div>
+
+
+
+            <div class="col-md-7 col-md-offset-5">
+              <button class="btn btn-default" type="submit">Generate Report</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Report Ends Here-->

@@ -1,0 +1,844 @@
+<!--SCIENTIST(creator) dashboard starts here-->
+<div *ngIf="!checkBtnStatusToAddNewParts()&&!checkBtnStatusToDisplayRovers() && !checkBtnStatusToInitializeRover()&&!checkBtnStatusToAddBrain() &&!checkBtnStatusToAddSensors() && !checkBtnStatusToAddVision() && !checkBtnStatusToAddInstruments() && !checkBtnStatusToDisplayRoverDesign() && !checkBtnStatusToAddNewSensor() && !checkBtnStatusToAddNewCamera() && !checkBtnStatusToAddNewInstrument() && !checkBtnStatusToRoverUpdate()" class="features-boxed">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a [routerLink]="['/']" >Home</a></li>
+            <li><a [routerLink]="['/creatrover']">Dashboard</a></li>
+        </ol>
+        <div class="intro">
+            <h2 class="text-center">WELCOME SCIENTIST</h2>
+            <hr>
+            <p class="text-center">Please select an option to proceed </p>
+        </div>
+        <div class="row features">
+            <div class="col-md-4 col-sm-6 item">
+                <div class="box">
+                    <a (click)="changeBtnStatusToInitializeRover()"> <i class="glyphicon glyphicon-plus icon"></i>
+                        <h3 class="name">Setup a Rover</h3></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 item">
+                <div class="box">
+                    <a (click)="changeBtnStatusToDisplayRovers()"> <i class="glyphicon glyphicon-wrench icon"></i>
+                        <h3 class="name">Manage Rovers</h3></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--SCIENTIST(creator) dashboard ends here-->
+
+<!--Set Up Rover-->
+<!--Initialize Rover form start here-->
+    <div *ngIf="checkBtnStatusToInitializeRover()">
+        <div class="container">
+            <form (submit)="initializeRover()" class="form-horizontal">
+                <div class="col-md-12">
+                    <ol class="breadcrumb">
+                      <li><a [routerLink]="['/']" >Home</a></li>
+                      <li><a (click)="changeBtnStatusToDashboard()">Dashboard</a></li>
+                      <li><a [routerLink]="['/creatrover']"><span>Initialize Rover </span></a></li>
+                   </ol>
+                </div>
+                <div class="col-md-12" style="margin-top:50px;">
+                    <div class="panel panel-success">
+                        <div class="panel-heading" style="background-color:#008ed6;">
+                            <h3 class="text-center panel-title" style="font-size:25px;"><strong>Initialize Rover</strong></h3></div>
+                        <div class="panel-body"><span> </span>
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-4">
+                                                <label class="control-label"><strong>Rover Name</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                               <input class="form-control" type="text" required="" placeholder="Enter Rover Name" name="RoverName" [(ngModel)]="RoverName">
+
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-4">
+                                                <label class="control-label"><strong>Weight</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="number" required="" placeholder="Enter Weight (KG)" name="Weight" [(ngModel)]="Weight">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <div class="col-sm-4">
+                                            <label class="control-label"><strong>Height</strong></label>
+                                          </div>
+                                          <div class="col-sm-8">
+                                            <input class="form-control" type="number" placeholder="Enter Height (m)" name="Height" [(ngModel)]="Height">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <div class="col-sm-4">
+                                            <label class="control-label"><strong>Length</strong></label>
+                                          </div>
+                                          <div class="col-sm-8">
+                                            <input class="form-control" type="number" placeholder="Enter Length (m)" name="Length" [(ngModel)]="Length">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <div class="col-sm-4">
+                                                    <label class="control-label"><strong>Launched Date</strong></label>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                  <input class="form-control" type="date" placeholder="Enter Launched Date" name="LaunchedDate" [(ngModel)]="LaunchedDate">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <div class="col-sm-4">
+                                                    <label class="control-label"><strong>Landed Date</strong></label>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                  <input class="form-control" type="date" placeholder="Enter Landed Date" name="LandedDate" [(ngModel)]="LandedDate">                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <div class="col-sm-4">
+                                            <label class="control-label"><strong>Landed Place</strong></label>
+                                          </div>
+                                          <div class="col-sm-8">
+                                            <input class="form-control" type="text" placeholder="Enter Landed Place" name="LandedPlace" [(ngModel)]="LandedPlace">                                                </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <div class="col-sm-4">
+                                            <label class="control-label"><strong>Power Type</strong></label>
+                                          </div>
+                                          <div class="col-sm-8">
+                                            <input class="form-control" type="text" placeholder="Enter Power Type" name="PowerType" [(ngModel)]="PowerType">                                                </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  <hr>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                  <button class="btn btn-primary" type="submit">Next </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<!--Initialize Rover form end here-->
+
+
+<!--Add Rover Brain form starts here-->
+<div *ngIf="checkBtnStatusToAddBrain()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="addRoverBrain()">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDashboard()">Dashboard</a></li>
+          <li><a><span>Initialize Rover </span></a></li>
+          <li><a><span>Add Rover Parts</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+              <h1 class="panel-title" style="font-size:25px;"><strong>Add A Brain To : <b style="color: yellow">{{RoverName}}</b> </strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Enter The Below Details To Add Rover Brain</strong></legend>
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Select OS Type</label>
+                    <select class="form-control" required="" name="OperatingSystem" [(ngModel)]="OperatingSystem">
+                      <option *ngFor="let devos of devOperatingSystemArray" >{{devos}}</option>
+                    </select>
+                    <small class="form-text text-muted" style="color:#008ed6;"><b >{{OperatingSystem}}</b></small>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Ram</label>
+                    <input class="form-control" type="number" required="" placeholder="Ram" name="Ram" [(ngModel)]="Ram">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Memory</label>
+                    <input class="form-control" type="number" required="" placeholder="Memory" name="MemoryCapacity" [(ngModel)]="MemoryCapacity">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-6">
+                      <button class="btn btn-primary" type="submit">Next </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Add Rover Brain form Ends here-->
+
+<!--Add Rover Sensors form starts here-->
+<div *ngIf="checkBtnStatusToAddSensors()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="addRoverSensors()" >
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDashboard()">Dashboard</a></li>
+          <li><a><span>Initialize Rover </span></a></li>
+          <li><a><span>Add Rover Parts</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Add Sensors To : <b style="color: yellow">{{RoverName}}</b></strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Enter The Below Details To Add Rover Sensors</strong></legend>
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Select Sensor Type</label>
+                    <select class="form-control" required="" name="SensorType" [(ngModel)]="SensorType">
+                      <option *ngFor="let devsens of devSensorArray" >{{devsens.DevSensorType}} - {{devsens.DevSensorDetails}}</option>
+                    </select>
+                    <small class="form-text text-muted" style="color:#008ed6;"><b >{{SensorType}}</b></small>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Mounted Location</label>
+                    <input class="form-control" type="text" required="" placeholder="Enter Mounted Location" name="sensorMountedLocation" [(ngModel)]="sensorMountedLocation">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-6">
+                      <button class="btn btn-primary" type="submit" >Add </button>
+                    </div>
+                    <div class="col-md-6">
+                      <button class="btn btn-success" type="button" (click)="changeBtnStatusToAddVision()">Next </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Add Rover Sensors form Ends here-->
+
+<!--Add Rover Vision(Camera) form starts here-->
+<div *ngIf="checkBtnStatusToAddVision()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="addRoverVision()">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDashboard()">Dashboard</a></li>
+          <li><a><span>Initialize Rover </span></a></li>
+          <li><a><span>Add Rover Parts</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Add Eyes To : <b style="color: yellow">{{RoverName}}</b></strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Enter The Below Details To Add Rover Camera</strong></legend>
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Select Camera Type</label>
+                      <select  class="form-control" required="" name="CameraType" [(ngModel)]="CameraType">
+                        <option *ngFor="let devcam of devCameraArray" >{{devcam.DevCameraType}} - {{devcam.DevCameraDetails}}</option>
+                      </select>
+                    <small class="form-text text-muted" style="color:#008ed6;"><b >{{CameraType}}</b></small>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Mounted Location</label>
+                    <input class="form-control" type="text" required="" placeholder="Enter Mounted Location" name="MountedLocation" [(ngModel)]="MountedLocation">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-6">
+                      <button class="btn btn-primary" type="submit">Add </button>
+                    </div>
+                    <div class="col-md-6">
+                      <button class="btn btn-success" type="button" (click)="changeBtnStatusToAddInstruments()">Next </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Add Rover Vision Form Ends here-->
+
+<!--Add Rover Instruments form starts here-->
+<div *ngIf="checkBtnStatusToAddInstruments()" class="container container-fluid" style="background-color:#ffffff;">
+  <form (submit)="addRoverInstruments()">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDashboard()">Dashboard</a></li>
+          <li><a><span>Initialize Rover </span></a></li>
+          <li><a><span>Add Rover Parts</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Add Instruments To : <b style="color: yellow">{{RoverName}}</b></strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Enter The Below Details To Add Rover Instruments</strong></legend>
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Select Instrument Type</label>
+                    <select class="form-control" required="" name="InstrumentType" [(ngModel)]="InstrumentType">
+                      <option *ngFor="let devinstrument of devInstrumentArray" >{{devinstrument.DevInstrumentType}} - {{devinstrument.DevInstrumentDetails}}</option>
+                    </select>
+                    <small class="form-text text-muted" style="color:#008ed6;"><b >{{InstrumentType}}</b></small>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="control-label">Mounted Location</label>
+                    <input class="form-control" type="text" required="" placeholder="Enter Mounted Location" name="instrumentMountedLocation" [(ngModel)]="instrumentMountedLocation">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-6">
+                      <button class="btn btn-primary" type="submit" >Add </button>
+                    </div>
+                    <div class="col-md-6">
+                      <button class="btn btn-success" type="button" (click)="changeBtnStatusToDisplayRoverDesign()">Next </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Add Rover Instruments form Ends here-->
+
+<!--Your Rover details form starts here-->
+<div *ngIf="checkBtnStatusToDisplayRoverDesign()" class="container container-fluid" style="background-color:#ffffff;">
+  <form class="form-horizontal">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDashboard()">Dashboard</a></li>
+          <li><a><span>Initialize Rover </span></a></li>
+          <li><a><span>Add Rover Parts</span></a></li>
+          <li><a><span>Rover Design </span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-10 col-md-offset-1" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Here is Your Rover: <b style="color: yellow">{{RoverName}}</b></strong></h1></div>
+          <div class="panel-body">
+            <fieldset>
+              <hr>
+              <p class="lead text-nowrap text-center text-success bg-primary"><strong> <b style="color: yellow">{{RoverName}}</b>: Primary Data</strong> </p>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                  <th>Rover ID</th>
+                  <th width="44%">Rover Name</th>
+                  <th width="20%">Weight</th>
+                  </thead>
+                  <tbody>
+                  <td>{{currentRid}}</td>
+                  <td>{{RoverName}}</td>
+                  <td>{{Weight}}</td>
+
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+            <fieldset>
+              <hr>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                  <th>Height</th>
+                  <th width="44%">Length</th>
+                  <th width="20%">Launched date</th>
+                  </thead>
+                  <tbody>
+                  <td>{{Height}}</td>
+                  <td>{{Length}}</td>
+                  <td>{{LaunchedDate}}</td>
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+            <fieldset>
+              <hr>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                  <th>Landed Date</th>
+                  <th width="44%">Landed Place</th>
+                  <th width="20%">Power Type</th>
+                  </thead>
+                  <tbody>
+                  <td>{{LandedDate}}</td>
+                  <td>{{LandedPlace}}</td>
+                  <td>{{PowerType}}</td>
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+            <fieldset>
+              <hr>
+              <p class="lead text-nowrap text-center text-success bg-primary"><strong> <b style="color: yellow">{{RoverName}}</b>:  Brain</strong> </p>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                  <th>OS</th>
+                  <th width="44%">Ram</th>
+                  <th width="20%">Memory</th>
+                  </thead>
+                  <tbody>
+                  <td>{{OperatingSystem}}</td>
+                  <td>{{Ram}}</td>
+                  <td>{{MemoryCapacity}}</td>
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+              <fieldset>
+                  <hr>
+                  <p class="lead text-nowrap text-center text-success bg-primary"><strong> <b style="color: yellow">{{RoverName}}</b>:  Sensors</strong> </p>
+                  <div class="table-responsive">
+                      <table class="table">
+                          <thead>
+                          <th>Sensor</th>
+                          <th width="44%">Mounted Location</th>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let sensor of sensors">
+                              <td>{{sensor.SENSORTYPE}}</td>
+                              <td>{{sensor.MOUNTEDLOCATION}}</td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </fieldset>
+              <fieldset>
+                  <hr>
+                  <p class="lead text-nowrap text-center text-success bg-primary"><strong> <b style="color: yellow">{{RoverName}}</b>:  Camera</strong> </p>
+                  <div class="table-responsive">
+                      <table class="table">
+                          <thead>
+                          <th>Camera</th>
+                          <th width="44%">Mounted Location</th>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let camera of cameras">
+                              <td>{{camera.CAMERATYPE}}</td>
+                              <td>{{camera.MOUNTEDLOCATION}}</td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </fieldset>
+              <fieldset>
+                  <hr>
+                  <p class="lead text-nowrap text-center text-success bg-primary"><strong> <b style="color: yellow">{{RoverName}}</b>:  Instruments</strong> </p>
+                  <div class="table-responsive">
+                      <table class="table">
+                          <thead>
+                          <th>Instrument</th>
+                          <th width="44%">Mounted Location</th>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let instrument of instruments">
+                              <td>{{instrument.INSTRUMENTTYPE}}</td>
+                              <td>{{instrument.MOUNTEDLOCATION}}</td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </fieldset>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Your Rover details form ends here-->
+<!--Set Up Rover End-->
+
+<!--Manage Rovers-->
+<!--display rovers starts here-->
+<div *ngIf="checkBtnStatusToDisplayRovers()" class="container container-fluid" style="background-color:#ffffff;">
+  <form  class="form-inline">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a (click)="changeBtnStatusToDashboard()">Dashboard</a></li>
+          <li><a><span>Manage Rovers</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-12" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Select a Rover</strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Below is the list of Rovers Added</strong></legend>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <caption>Your Rovers</caption>
+                <thead>
+                <tr>
+                  <th>RID</th>
+                  <th width="10%" >Name </th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                  <th>Sensor Count</th>
+                  <th >Camera Count </th>
+                  <th>Instrument Count</th>
+                  <th >Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let rover of roverArray" >
+                  <td>{{rover.RoverID}}</td>
+                  <td >{{rover.RoverName}}</td>
+                    <td >{{rover.Height}}</td>
+                    <td >{{rover.Weight}}</td>
+                  <td >{{rover.SENSORCOUNT}}</td>
+                  <td>{{rover.CAMERACOUNT}}</td>
+                  <td>{{rover.INSTRUMENTCOUNT}}</td>
+                  <td width="10%">
+                    <button class="btn btn-primary" type="button" (click)="changeBtnStatusToAddNewParts(rover.RoverID)" >Add New Parts</button>
+                  </td>
+                  <td width="10%">
+                    <button class="btn btn-primary" type="button" (click)="findUpdateToBeRover(rover.RoverID)">Update Rover</button>
+                  </td>
+                    <td width="10%">
+                    <button class="btn btn-danger" type="button" (click)="deleteARover(rover.RoverID)">Delete Rover</button>
+                  </td>
+                </tr>
+                <tr></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--display rovers ends here-->
+
+<!--Add New Part Form Starts Here-->
+<div *ngIf="checkBtnStatusToAddNewParts() || checkBtnStatusToAddNewSensor() || checkBtnStatusToAddNewCamera() || checkBtnStatusToAddNewInstrument()" class="container container-fluid" style="background-color:#ffffff;">
+    <form  class="form-horizontal">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a [routerLink]="['/']" >Home</a></li>
+                    <li><a (click)="changeBtnStatusToDashboard()">Dashboard</a></li>
+                    <li><a><span>Manage Rovers</span></a></li>
+                </ol>
+            </div>
+            <div class="col-md-10 col-md-offset-1" style="margin-top:90px;">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color:#008ed6;">
+                        <h1 class="panel-title" style="font-size:25px;"><strong>Select Rover Part To : <b style="color: yellow">{{RoverName}}</b></strong></h1></div>
+                    <div class="panel-body">
+                        <fieldset>
+                            <legend style="font-size:18px;"><strong>Select Rover Part To Add</strong></legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+
+                                        <div class="col-md-7">
+                                            <div class="form-group">
+                                                <div class="col-sm-4">
+                                                    <label class="control-label">Rover Parts </label>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control" required=""  name="rovernewpart" [(ngModel)]="rovernewpart">
+                                                        <option>Sensors</option>
+                                                        <option>Cameras</option>
+                                                        <option>Instruments</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-4">
+                                                <button class="btn btn-warning" type="button" (click)="changeBtnStatusToAddNewSensorCameraInstrument()">OK</button>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Add New Sensor Form Starts Here-->
+                                <form (submit)="addRoverSensors()" *ngIf="checkBtnStatusToAddNewSensor()">
+                                <div class="col-md-12">
+                                <div *ngIf="checkBtnStatusToAddNewSensor()" class="col-md-12">
+                                    <div class="form-group">
+                                        <label  class="control-label">Select Sensor Type</label>
+                                        <select class="form-control" required="" name="SensorType" [(ngModel)]="SensorType">
+                                            <option *ngFor="let devsens of devSensorArray" >{{devsens.DevSensorType}} - {{devsens.DevSensorDetails}}</option>
+                                        </select>
+                                        <small class="form-text text-muted" style="color:#008ed6;"><b >{{SensorType}}</b></small>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="checkBtnStatusToAddNewSensor()"  class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Mounted Location</label>
+                                        <input class="form-control" type="text" required="" placeholder="Enter Mounted Location" name="sensorMountedLocation" [(ngModel)]="sensorMountedLocation">
+                                    </div>
+                                </div>
+                                <div *ngIf="checkBtnStatusToAddNewSensor()" class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-primary" type="submit" >Add </button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-success" type="button" (click)="changeBtnStatusToDisplayRovers()" >Back </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                </div>
+                                </form>
+                                <!--Add New Sensor Form Ends Here-->
+
+                                <!--Add New Vision Form Starts Here -->
+                                <form (submit)="addRoverVision()" *ngIf="checkBtnStatusToAddNewCamera()">
+                                    <div class="col-md-12">
+                                <div *ngIf="checkBtnStatusToAddNewCamera()" class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Select Camera Type</label>
+                                        <select  class="form-control" required="" name="CameraType" [(ngModel)]="CameraType">
+                                            <option *ngFor="let devcam of devCameraArray" >{{devcam.DevCameraType}} - {{devcam.DevCameraDetails}}</option>
+                                        </select>
+                                        <small class="form-text text-muted" style="color:#008ed6;"><b >{{CameraType}}</b></small>
+                                    </div>
+                                </div>
+                                <div *ngIf="checkBtnStatusToAddNewCamera()" class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Mounted Location</label>
+                                        <input class="form-control" type="text" required="" placeholder="Enter Mounted Location" name="MountedLocation" [(ngModel)]="MountedLocation">
+                                    </div>
+                                </div>
+                                <div *ngIf="checkBtnStatusToAddNewCamera()" class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-primary" type="submit">Add </button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-success" type="button" (click)="changeBtnStatusToDisplayRovers()" >Back </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                    </div>
+                                </form>
+                            <!--Add New Vision Form Ends Here-->
+
+                            <!--Add New Instruments Form Starts Here-->
+                                <form (submit)="addRoverInstruments()" *ngIf="checkBtnStatusToAddNewInstrument()">
+                                    <div class="col-md-12">
+                                <div *ngIf="checkBtnStatusToAddNewInstrument()" class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Select Instrument Type</label>
+                                        <select class="form-control" required="" name="InstrumentType" [(ngModel)]="InstrumentType">
+                                            <option *ngFor="let devinstrument of devInstrumentArray" >{{devinstrument.DevInstrumentType}} - {{devinstrument.DevInstrumentDetails}}</option>
+                                        </select>
+                                        <small class="form-text text-muted" style="color:#008ed6;"><b >{{InstrumentType}}</b></small>
+                                    </div>
+                                </div>
+                                <div *ngIf="checkBtnStatusToAddNewInstrument()" class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Mounted Location</label>
+                                        <input class="form-control" type="text" required="" placeholder="Enter Mounted Location" name="instrumentMountedLocation" [(ngModel)]="instrumentMountedLocation">
+                                    </div>
+                                </div>
+                                <div *ngIf="checkBtnStatusToAddNewInstrument()" class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-primary" type="submit" >Add </button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-success" type="button" (click)="changeBtnStatusToDisplayRovers()">Back </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!--Add New Part Form Ends Here-->
+
+<!--Rover Update form start here-->
+<div *ngIf="checkBtnStatusToRoverUpdate()">
+    <div class="container">
+        <form (submit)="updateRover()" class="form-horizontal">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a [routerLink]="['/']" >Home</a></li>
+                    <li><a (click)="changeBtnStatusToDashboard()">Dashboard</a></li>
+                    <li><a><span>Manage Rovers</span></a></li>
+                    <li><a><span>Update Rover</span></a></li>
+                </ol>
+            </div>
+            <div class="col-md-12" style="margin-top:50px;">
+                <div class="panel panel-success">
+                    <div class="panel-heading" style="background-color:#008ed6;">
+                        <h3 class="text-center panel-title" style="font-size:25px;"><strong>Update : <b style="color: yellow">{{RoverName}}</b></strong></h3></div>
+                    <div class="panel-body"><span> </span>
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-4">
+                                            <label class="control-label"><strong>Rover Name</strong></label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" required="" placeholder="Enter Rover Name" name="RoverName" [(ngModel)]="RoverName">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-4">
+                                            <label class="control-label"><strong>Weight</strong></label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="number" required="" placeholder="Enter Weight" name="Weight" [(ngModel)]="Weight">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-4">
+                                                <label class="control-label"><strong>Height</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="number" placeholder="Enter Height" name="Height" [(ngModel)]="Height">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-4">
+                                                <label class="control-label"><strong>Length</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="number" placeholder="Enter Length" name="Length" [(ngModel)]="Length">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-4">
+                                                <label class="control-label"><strong>Power Type</strong></label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" placeholder="Enter Power Type" name="PowerType" [(ngModel)]="PowerType">                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <button class="btn btn-primary" type="submit">Update </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--Rover Update form ends here-->

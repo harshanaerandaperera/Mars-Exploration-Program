@@ -1,0 +1,164 @@
+<!--display rovers starts here-->
+<div *ngIf="!checkBtnStatusToSetObjectives() && !checkchangeBtnStatusToDisplayAddedObjectives()&& !checkBtnStatusToSetTasks()" class="container container-fluid" style="background-color:#ffffff;">
+  <form class="form-inline">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a [routerLink]="['/discovermass']"><span>Dashboard </span></a></li>
+          <li><a><span>Select a Rover</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-8 col-md-offset-2" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Select a Rover</strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Below is the list of Rovers Added</strong></legend>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <caption>Your Rovers</caption>
+                <thead>
+                <tr>
+                  <th>RID</th>
+                  <th width="20%" >Name </th>
+                  <th width="20%">Landed Place </th>
+                  <th ></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let rover of roverArray" >
+                  <td>{{rover.RoverID}}</td>
+                  <td >{{rover.RoverName}}</td>
+                  <td >{{rover.LandedPlace}}</td>
+                  <td>
+                    <button class="btn btn-primary" type="button" (click)="getSelectedRoverComputerIdAndRover(rover.RoverID,rover.RoverName)">Set Objectives And Tasks</button>
+                  </td>
+                </tr>
+                <tr></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--display rovers ends here-->
+
+<!--display objectives starts here-->
+<div *ngIf="checkBtnStatusToSetObjectives()" class="container container-fluid" style="background-color:#ffffff;">
+  <form class="form-inline">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a [routerLink]="['/discovermass']"><span>Dashboard </span></a></li>
+          <li><a (click)="changeBtnStatusToDefaultPage()"><span>Select a Rover</span></a></li>
+          <li><a><span>Set Objectives</span></a></li>
+        </ol>
+      </div>
+      <div class="col-md-8 col-md-offset-2" style="margin-top:90px;">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h1 class="panel-title" style="font-size:25px;"><strong>Set Objectives to : <b style="color: yellow">{{selectedRoverName}}</b></strong></h1></div>
+          <div class="panel-body">
+            <legend style="font-size:18px;"><strong>Below is the list of Objectives </strong></legend>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <caption>Objectives</caption>
+                <thead>
+                <tr>
+                  <th>Objective Type</th>
+                  <th>Objective Details </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let obj of objectiveArray">
+                  <td>{{obj.DevObjectiveType}}</td>
+                  <td>{{obj.DevObjestiveDetails}}</td>
+                  <td >
+                    <button class="btn btn-primary" type="button" (click)="addRoverObjectives(obj.DevObjectiveType)">Next</button>
+                  </td>
+                </tr>
+                <tr>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-primary" type="button" (click)="changeBtnStatusToDefaultPage()">Back</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--display objectives ends here-->
+
+
+<!--Rover Task form start here-->
+<div *ngIf="checkBtnStatusToSetTasks()">
+  <div class="container">
+    <form (submit)="addRoverTasks()" class="form-horizontal">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="['/']" >Home</a></li>
+          <li><a [routerLink]="['/discovermass']"><span>Dashboard </span></a></li>
+          <li><a (click)="changeBtnStatusToDefaultPage()"><span>Select a Rover</span></a></li>
+          <li><a (click)="changeBtnStatusToSetObjectives()"><span>Set Objectives</span></a></li>
+          <li><a><span>Set Tasks</span></a></li>
+
+        </ol>
+      </div>
+      <div class="col-md-8 col-md-offset-2" style="margin-top:50px;">
+        <div class="panel panel-success">
+          <div class="panel-heading" style="background-color:#008ed6;">
+            <h3 class="text-center panel-title" style="font-size:25px;"><strong>Add Task Details To Objective : <b style="color: yellow">{{selectedObjectiveTypeToAddTasks}}</b></strong></h3></div>
+          <div class="panel-body"><span> </span>
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-12">
+                      <label class="control-label"><strong>Tasks Details</strong></label>
+                    </div>
+                    <div class="col-md-12">
+                      <input class="form-control" type="text" required="" placeholder="Enter Task Details" name="TaskDetails" [(ngModel)]="TaskDetails">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="panel-footer">
+            <div class="form-group">
+              <div class="col-sm-4">
+                <button class="btn btn-primary" type="submit">Add </button>
+              </div>
+              <div class="col-sm-4">
+                <button class="btn btn-primary" type="button" (click)="changeBtnStatusToSetObjectives()">Back </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!--Rover Task form ends here-->
+
+
+
+
+
+
+
+
+
+
