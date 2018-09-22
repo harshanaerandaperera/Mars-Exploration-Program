@@ -1,111 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be0c47bd-4c81-4f89-a9fc-a2b1d9828cda" name="Default" comment="Created rover create ui">
-      <change beforePath="$PROJECT_DIR$/rover/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/dataSources/8e4b817a-7cca-4818-91a3-0d8d95b4647b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/dataSources/8e4b817a-7cca-4818-91a3-0d8d95b4647b/storage_v2/_src_/schema/HARSHANA.ZmRqNg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/dataSources/8e4b817a-7cca-4818-91a3-0d8d95b4647b/storage_v2/_src_/schema/HARSHANA.ZmRqNg.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/dataSources/8e4b817a-7cca-4818-91a3-0d8d95b4647b/storage_v2/_staging_/schema/HARSHANA.ZmRqNg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/dataSources/8e4b817a-7cca-4818-91a3-0d8d95b4647b/storage_v2/_staging_/schema/HARSHANA.ZmRqNg/routine/DELETEROVER.W5V_Pg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/dataSources/8e4b817a-7cca-4818-91a3-0d8d95b4647b/storage_v2/_staging_/schema/HARSHANA.ZmRqNg/routine/DELETEROVER.W5V_Pg.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/dataSources/8e4b817a-7cca-4818-91a3-0d8d95b4647b/storage_v2/_staging_/schema/HARSHANA.ZmRqNg/routine/TOTALEMP.BKf9-w.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/dataSources/8e4b817a-7cca-4818-91a3-0d8d95b4647b/storage_v2/_staging_/schema/HARSHANA.ZmRqNg/routine/TOTALEMP.BKf9-w.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/rover.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/controller/controlrover.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/controller/createrover.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/controller/developer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/controller/discovermass.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/.angular-cli.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/creator/creator.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/creator/creator.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/creator/devcameras.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/creator/devinstruments.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/creator/devsensors.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/creator/rovercameras.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/creator/roverinstruments.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/creator/roversensors.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/dashboard/dashboard.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/dashboard/dashboard.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/developer/developer.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/developer/developer.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/discovermass/discovermass.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/discovermass/discovermass.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/discovermass/element.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/discovermass/obje.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/discovermass/path.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/discovermass/tasks.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/footer/footer.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/footer/footer.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/navbar/navbar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/navbar/navbar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/rovercontroller/objectives.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/rovercontroller/rover.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/rovercontroller/rovercontroller.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/rovercontroller/rovercontroller.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/app/service/restfull.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/css/styles.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/MaterialIcons-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/MaterialIcons-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/MaterialIcons-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/MaterialIcons-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/MaterialIcons-Regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/ionicons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/ionicons.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/ionicons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/ionicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/ionicons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/fonts/material-icons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/img/download.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/assets/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/src/typings.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rover/view/tslint.json" beforeDir="false" />
-    </list>
+    <list default="true" id="be0c47bd-4c81-4f89-a9fc-a2b1d9828cda" name="Default" comment="Created rover create ui" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -307,7 +203,7 @@
       <path value="$PROJECT_DIR$/view/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-10" />
     <option name="y" value="28" />
     <option name="width" value="1346" />
@@ -323,13 +219,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="rover" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rover" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rover" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rover" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="Mars-Exploration-Program" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mars-Exploration-Program" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -412,12 +303,12 @@
       <workItem from="1532403406863" duration="10427000" />
       <workItem from="1532416161004" duration="3970000" />
       <workItem from="1532516430357" duration="83000" />
-      <workItem from="1537647757037" duration="56000" />
+      <workItem from="1537647757037" duration="308000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="474577000" />
+    <option name="totallyTimeSpent" value="474829000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,11 +320,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-10" y="28" width="1346" height="692" extended-state="1" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.1130064" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.16485226" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.37623763" />
@@ -447,12 +338,12 @@
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4969419" weight="0.32838285" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32838285" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.49621785" visible="true" weight="0.22451194" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.49621785" visible="true" weight="0.37096775" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Mongo Explorer" order="3" weight="0.32980332" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.20628998" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.30093312" />
     </layout>
     <layout-to-restore>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
